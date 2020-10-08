@@ -29,9 +29,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
-PRODUCT_RESTRICT_VENDOR_FILES := owner
+#PRODUCT_RESTRICT_VENDOR_FILES := owner
 
-PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
+#PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
