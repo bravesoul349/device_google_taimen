@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
 
 # touchscreen configuration
 PRODUCT_COPY_FILES += \
-    device/google/taimen/touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/touchscreen.idc
+    device/google/taimen/configs/keylayout/touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/touchscreen.idc
 
 # Keymaster configuration
 PRODUCT_COPY_FILES += \
