@@ -22,8 +22,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, device/google/taimen/device.mk)
 $(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
 
-PRODUCT_COPY_FILES += \
-    device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
