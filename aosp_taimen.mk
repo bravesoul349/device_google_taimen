@@ -38,3 +38,11 @@ PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_taimen
 PRODUCT_DEVICE := taimen
 PRODUCT_MODEL := AOSP on taimen
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="taimen" \
+    PRIVATE_BUILD_DESC="taimen-user 11 RP1A.201005.004.A1 6934943 release-keys"
+BUILD_FINGERPRINT := google/taimen/taimen:11/RP1A.201005.004.A1/6934943:user/release-keys
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
