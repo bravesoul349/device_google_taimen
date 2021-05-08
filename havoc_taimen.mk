@@ -32,6 +32,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 
 # Inherit some common Havoc-OS stuff.
+HAVOC_BUILD_TYPE := Official
+HAVOC_MAINTAINER := Saurabh Jarial (bravesoul349)
+HAVOC_GROUP_URL := https://t.me/havoc_pixel2
 TARGET_BOOT_ANIMATION_RES := 1440
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
