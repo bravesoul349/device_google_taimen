@@ -18,7 +18,28 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+#
+# All components inherited here go to system_ext image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
+#
+# All components inherited here go to vendor image
+#
+# TODO(b/136525499): move *_vendor.mk into the vendor makefile later
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+
+# Inherit some common Havoc-OS stuff.
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_WIFI_EXT := true
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+
+# Inherit product specific makefiles
 $(call inherit-product, device/google/taimen/device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
 $(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
@@ -34,10 +55,10 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
-PRODUCT_NAME := aosp_taimen
+PRODUCT_BRAND := google
+PRODUCT_NAME := havoc_taimen
 PRODUCT_DEVICE := taimen
-PRODUCT_MODEL := AOSP on taimen
+PRODUCT_MODEL := Pixel 2 XL
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="taimen" \
